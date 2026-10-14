@@ -1,0 +1,19 @@
+.gcloudignore
+.git
+.gitignore
+#!include:.gitignore
+
+# Cloud Build only needs application, contract, and build configuration files.
+**/application_default_credentials.json
+**/.netrc
+**/.npmrc
+**/.pypirc
+**/.git-credentials
+**/*.tfplan
+**/*.plan
+docs/
+output/
+**/test/
+**/.coverage
+**/coverage/
+**/htmlcov/

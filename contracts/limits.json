@@ -1,0 +1,11 @@
+{
+  "drift": {"staleThreshold": {"minimumSeverity": "medium", "minimumConfidence": 0.6}, "expiryDays": 90},
+  "invitations": {"expiryDays": 14},
+  "limits": {"maxRulesPerResolution": 500, "maxFilesPerPrAnalysis": 300, "maxEvidencePerVersion": 20, "maxImpactPaths": 500, "maxArtifactContentBytes": 204800, "maxBootstrapRules": 40, "maxEvidencePerBootstrapRule": 5, "maxFindingsPerDriftScan": 50, "maxTransactionWrites": 450},
+  "retentionClass": {"standard": null, "personal-data": {"days": 180}, "evidence": {"days": 365, "minimumDays": 90, "maximumDays": 1095}, "audit": {"days": 730}, "uninstallGracePeriodDays": 30, "deprecatedToArchivedDays": 365},
+  "workspaces": {"settings": {"defaultLocale": "ja", "prCommentRetentionDays": 180, "evidenceRetentionDays": 365, "allowAiAutoProposal": true, "aiDataUsageConsent": false}},
+  "repositories": {"rulesPath": ".rulebranch/", "compileTargets": ["agents-md", "claude-md", "copilot-instructions", "rulebranch-rules"]},
+  "analysisJobs": {"validStatusTransitions": {"queued": ["running"], "running": ["done", "failed"], "failed": ["running"]}, "idempotencyKeyParts": {"bootstrap": [2], "publish_verify": [3], "drift_scan": [2], "compile": [3], "proposal": [3], "purge": [2, 4], "pr_review": [4], "impact": [3]}, "maxIdempotencyKeyLength": 200, "maxPayloadBytes": 65536, "maxWarnings": 20, "defaultMaxAttempts": 5},
+  "ruleVersions": {"maxContentBytes": 32768, "maxRationaleBytes": 8192, "maxAiSummaryBytes": 1024, "maxDriftFindingIds": 20},
+  "uninstall": {"tombstoneTables": ["rules", "rule_versions", "rule_checks", "drift_findings", "evidence", "usage_provenance", "compiled_artifacts", "impact_reports", "pr_review_comments", "decision_memories", "projects", "repositories"]}
+}

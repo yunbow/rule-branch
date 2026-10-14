@@ -1,0 +1,78 @@
+/* Revision editor, scoped to this page to preserve shared form layouts. */
+.versionHeaderMetaGroup{display:inline-flex;align-items:center;gap:8px;min-width:0}
+.versionHeaderMetaGroup>span:first-child{color:var(--color-text-muted);font-size:12px;font-weight:650}
+.versionCreateForm{min-width:0}
+.versionCreateForm>.pageSection{margin-top:0;min-width:0}
+.versionCreateForm .pageSectionCard{min-width:0}
+.versionCreateForm .pageSectionHeader{margin-bottom:18px}
+.versionCreateContext{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px 20px;border:1px solid var(--color-primary-border);
+  border-radius:var(--radius-card);background:var(--color-primary-subtle);
+}
+.versionCreateContextInfo{min-width:0;display:grid;gap:8px}
+.versionCreateContextInfo .inlineActions{gap:10px;flex-wrap:wrap}
+.versionCreateContextInfo strong{color:var(--color-text);font-size:15px}
+.versionCreateContextInfo p{margin:0;color:var(--color-text-secondary);font-size:13px;line-height:1.65}
+.versionCreateEyebrow{color:var(--color-text-muted);font-size:11px;font-weight:800;letter-spacing:.05em}
+.versionCreateContext>a{flex:0 0 auto}
+.versionCreateBanner{margin:0 0 16px;display:block}
+.versionCreateBanner strong{display:block;margin-bottom:5px}
+.versionCreateBanner p{margin:0 0 8px;line-height:1.7}
+.versionCreateBanner a{color:inherit;text-decoration:underline}
+.versionCreateTabs{width:max-content;margin:0 0 16px;max-width:100%}
+.versionCreateFieldLabel{display:inline-flex;align-items:center;flex-wrap:wrap;gap:8px;color:var(--color-text-secondary);font-size:13px;font-weight:750}
+.versionCreateFieldLabel span{padding:2px 6px;border-radius:4px;background:#fef2f2;color:#991b1b;font-size:10px;font-weight:700}
+.versionCreateEditor{min-width:0}
+.versionCreateContentInput{display:block;width:100%;min-height:330px;resize:vertical;font-size:14px;line-height:1.75;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-wrap:anywhere}
+.versionCreateReasonInput{display:block;width:100%;min-height:150px;resize:vertical;font-size:14px;line-height:1.75}
+.versionCreatePreview{min-height:220px;max-width:100%;background:var(--color-surface)}
+.versionCreatePreview .markdown{font-size:14px;line-height:1.8;overflow-wrap:anywhere}
+.versionCreatePreview .markdown>p:first-child{margin-top:0}
+.versionCreateDiff{max-width:100%;min-width:0}
+.versionCreateDiff .versionDiff{min-width:0}
+.versionCreateDiff pre{overflow-wrap:anywhere}
+.versionCreateSubnote{margin:0 0 14px;color:var(--color-text-muted);font-size:12px;line-height:1.7}
+.versionCreateChangeGrid{display:grid;grid-template-columns:minmax(0,2fr) minmax(190px,1fr);gap:20px}
+.versionCreateChangeGrid>.formGroup{min-width:0;align-content:start}
+.versionCreateChangeGrid .formNote{line-height:1.6}
+.versionCreateReference{margin-top:16px;padding:13px 15px;border:1px solid var(--color-border);border-radius:10px;background:var(--color-surface-subtle)}
+.versionCreateReference>summary{color:var(--color-primary-hover);cursor:pointer;font-size:13px;font-weight:750}
+.versionCreateReference>summary:focus-visible{outline:2px solid var(--color-primary);outline-offset:4px}
+.versionCreateReference>p:not(.formNote){margin:14px 0;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--color-text-secondary);font-size:13px;line-height:1.7}
+.versionCreateReference>p.formNote{margin:12px 0}
+.versionCreateReference .button{margin-top:2px}
+.versionCreateEvidenceAdd{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end;margin-top:12px}
+.versionCreateEvidenceAdd .formField{min-width:0}
+.versionCreateEvidenceAdd .button{margin:0}
+.versionCreateForm .evidenceCard{min-width:0}
+.versionCreateForm .evidenceSelectionHeader{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.versionCreateForm .evidenceSelectionHeader>div{min-width:0}
+.versionCreateForm .evidenceSelectionHeader span{display:block;overflow-wrap:anywhere;line-height:1.6}
+.versionCreateForm .evidenceRemoveAction{flex:0 0 auto;border:1px solid var(--color-border);border-radius:8px;background:var(--color-surface);color:var(--color-text-secondary);padding:7px 10px;font-size:12px;font-weight:700;cursor:pointer}
+.versionCreateForm .evidenceRemoveAction:hover{border-color:var(--color-primary-border);color:var(--color-primary-hover)}
+.versionCreateForm .evidenceRemoveAction:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}
+.versionCreateAdvanced{display:grid;gap:12px;justify-items:start}
+.versionCreateAdvanced>.formGroup{width:100%;min-width:0}
+.versionCreateJsonInput{display:block;min-height:220px;resize:vertical;font-size:13px;line-height:1.65;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.versionCreateActions{display:flex;justify-content:flex-end;gap:10px;margin-top:14px}
+.versionCreateActions+.formNote{margin-top:14px;text-align:right}
+.versionCreateForm .formError{margin:4px 0 0;line-height:1.6}
+@media (max-width:800px){
+  .versionCreateChangeGrid{grid-template-columns:1fr}
+  .versionCreateContext{align-items:flex-start;flex-direction:column}
+}
+@media (max-width:600px){
+  .versionCreateForm>.pageSectionCard{padding:18px 16px}
+  .versionCreateContext{padding:16px}
+  .versionCreateContext>a{align-self:stretch;text-align:center}
+  .versionCreateTabs{width:100%;overflow-x:auto}
+  .versionCreateContentInput{min-height:300px}
+  .versionCreateEvidenceAdd{grid-template-columns:1fr}
+  .versionCreateEvidenceAdd .button{width:100%}
+  .versionCreateForm .evidenceSelectionHeader{flex-direction:column}
+  .versionCreateForm .evidenceRemoveAction{align-self:flex-start}
+  .versionCreateActions{align-items:stretch;flex-direction:column-reverse}
+  .versionCreateActions button{width:100%}
+  .versionCreateActions+.formNote{text-align:left}
+}

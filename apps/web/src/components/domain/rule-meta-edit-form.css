@@ -1,0 +1,97 @@
+/* Project rule metadata editor. Scoped so version forms and modals retain their layouts. */
+.ruleMetaHeaderFact{display:inline-flex;align-items:center;gap:8px;min-width:0}
+.ruleMetaHeaderFact>span:first-child{color:var(--color-text-muted);font-size:12px;font-weight:650}
+.ruleMetaHeaderFact strong{color:var(--color-text-secondary);font-size:12px;font-weight:700}
+.ruleMetaEditForm{min-width:0}
+.ruleMetaEditForm>.pageSection{margin-top:0;min-width:0}
+.ruleMetaEditForm .pageSectionCard{min-width:0}
+.ruleMetaEditForm .pageSectionHeader{margin-bottom:18px}
+.ruleMetaEditIntro{
+  min-width:0;padding:16px 20px;
+  border:1px solid var(--color-primary-border);
+  border-radius:var(--radius-card);
+  background:var(--color-primary-subtle);
+  color:var(--color-text-secondary);
+}
+.ruleMetaEditIntro>strong{display:block;margin-bottom:5px;color:var(--color-text);font-size:14px}
+.ruleMetaEditIntro p{margin:0 0 7px;font-size:13px;line-height:1.7}
+.ruleMetaEditIntro>span{font-size:12px;line-height:1.6}
+.ruleMetaEditIntro a{color:var(--color-primary-hover);font-weight:750}
+.ruleMetaEditFields,.ruleMetaEditForm .selectorFields{
+  display:grid;gap:16px;min-width:0;margin:0;padding:0;border:0;
+}
+.ruleMetaEditFields:disabled{opacity:1}
+.ruleMetaEditForm .selectorFields>legend{
+  padding:0 0 10px;color:var(--color-text-secondary);font-size:13px;font-weight:750;
+}
+.ruleMetaEditForm .selectorFields>.formNote{margin-bottom:4px}
+.ruleMetaEditBasic{display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+.ruleMetaEditBasic>.formGroup{max-width:850px;min-width:0}
+.ruleMetaEditForm .formGroup{min-width:0}
+.ruleMetaEditForm .formGroup>span:first-child{color:var(--color-text-secondary);font-size:13px;font-weight:750}
+.ruleMetaEditForm .formGroup>.formHint{line-height:1.65}
+.ruleMetaEditForm .formError{margin:4px 0 0;line-height:1.65}
+.ruleMetaEditForm .formField{min-width:0}
+.ruleMetaEditForm .formField>span:first-child{font-size:13px}
+.ruleMetaEditForm .tagInput{min-width:0}
+.ruleMetaEditForm .tagInputChip{max-width:100%}
+.ruleMetaEditForm .ruleRepoScope{padding:16px;gap:12px;background:var(--color-surface-subtle)}
+.ruleMetaEditForm .ruleRepoScopeOptions{gap:10px 22px}
+.ruleMetaEditForm .ruleRepoScopeOptions label{line-height:1.6}
+.ruleMetaEditForm .repositoryChecklist{max-height:270px;background:var(--color-surface)}
+.ruleMetaEditForm .selectorFields .formGrid{margin-top:4px;gap:18px}
+.ruleMetaScopeSummary{
+  margin-top:18px;padding:16px;
+  border:1px solid var(--color-border);
+  border-radius:10px;background:var(--color-surface-subtle);min-width:0;
+}
+.ruleMetaScopeSummary h3,.ruleMetaChanges h3{
+  margin:0 0 6px;color:var(--color-text);font-size:14px;font-weight:750;
+}
+.ruleMetaScopeSummary>p{margin:0 0 14px;color:var(--color-text-muted);font-size:12px;line-height:1.6}
+.ruleMetaScopeSummary dl{display:grid;gap:0;margin:0}
+.ruleMetaScopeSummary dl>div{
+  display:grid;grid-template-columns:210px minmax(0,1fr);gap:12px;
+  padding:10px 0;border-top:1px solid var(--color-border);
+}
+.ruleMetaScopeSummary dt{color:var(--color-text-muted);font-size:12px;font-weight:700}
+.ruleMetaScopeSummary dd{min-width:0;margin:0;color:var(--color-text-secondary);font-size:13px;line-height:1.65;overflow-wrap:anywhere}
+.ruleMetaEditMonitoring{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(220px,1fr);gap:22px}
+.ruleMetaMemberRetry{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.ruleMetaMemberRetry small{flex:1 1 180px}
+.ruleMetaMemberRetry button{min-height:34px}
+.ruleMetaEditReviewState{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.ruleMetaUnsaved,.ruleMetaUnchanged{
+  display:inline-flex;align-items:center;min-height:28px;padding:4px 10px;
+  border-radius:999px;font-size:12px;font-weight:750;
+}
+.ruleMetaUnsaved{background:#fff7ed;color:#9a3412}
+.ruleMetaUnchanged{background:var(--color-surface-muted);color:var(--color-text-secondary)}
+.ruleMetaDraftWarning{color:#9a3412;font-size:12px;line-height:1.6}
+.ruleMetaChanges{min-width:0}
+.ruleMetaChanges h3{margin-bottom:12px}
+.ruleMetaChangesTable{max-width:100%;box-shadow:none}
+.ruleMetaChangesTable table{min-width:600px;table-layout:fixed}
+.ruleMetaChangesTable th,.ruleMetaChangesTable td{
+  padding:12px;color:var(--color-text-secondary);font-size:13px;
+  line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;vertical-align:top;
+  border-bottom:1px solid var(--color-border);
+}
+.ruleMetaChangesTable th:first-child{width:28%;color:var(--color-text);font-weight:750}
+.ruleMetaChangesTable td{width:36%}
+.ruleMetaEditWarning{margin:16px 0 0}
+.ruleMetaEditActions{margin-top:20px;gap:10px}
+@media (max-width:900px){
+  .ruleMetaEditMonitoring{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .ruleMetaScopeSummary dl>div{grid-template-columns:1fr;gap:5px}
+  .ruleMetaEditForm .selectorFields .formGrid{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .ruleMetaEditForm>.pageSectionCard{padding:18px 16px}
+  .ruleMetaEditIntro{padding:15px 16px}
+  .ruleMetaScopeSummary{padding:12px}
+  .ruleMetaEditActions{flex-direction:column-reverse;align-items:stretch}
+  .ruleMetaEditActions button{width:100%}
+}

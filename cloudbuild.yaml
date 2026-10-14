@@ -1,0 +1,13 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args: ["build", "-f", "apps/web/Dockerfile", "-t", "${_WEB_IMAGE}", "."]
+  - name: gcr.io/cloud-builders/docker
+    args: ["push", "${_WEB_IMAGE}"]
+  - name: gcr.io/cloud-builders/docker
+    args: ["build", "-f", "apps/worker/Dockerfile", "-t", "${_WORKER_IMAGE}", "."]
+  - name: gcr.io/cloud-builders/docker
+    args: ["push", "${_WORKER_IMAGE}"]
+
+images:
+  - "${_WEB_IMAGE}"
+  - "${_WORKER_IMAGE}"

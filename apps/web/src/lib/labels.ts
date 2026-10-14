@@ -1,0 +1,15 @@
+export type BadgeTone = "gray" | "gray-outline" | "green" | "amber" | "blue" | "red" | "red-outline" | "spinner";
+type Entry = readonly [string, BadgeTone];
+export const LABELS: Record<string, Record<string, Entry>> = {
+  "rules.status": { draft:["候補","gray"], active:["有効","green"], stale:["要確認","amber"], superseded:["統合済","gray"], deprecated:["廃止","gray"], archived:["アーカイブ","gray-outline"] },
+  "rule_versions.status": { proposed:["提案中","blue"], approved:["承認済","green"], rejected:["却下","red"], superseded:["旧版","gray"], withdrawn:["取下げ","gray"] },
+  "repositories.status": { active:["有効","green"], removed:["解除済","gray-outline"] },
+  "drift_findings.status": { open:["未処理","amber"], accepted:["対応中","blue"], resolved:["解決","green"], dismissed:["見送り","gray"], expired:["期限切れ","gray"] },
+  severity: { info:["情報","gray"], low:["低","blue"], medium:["中","amber"], high:["高","red"] },
+  driftType: { dependency_drift:["依存関係の変更","amber"], framework_drift:["フレームワークの変更","amber"], practice_drift:["プラクティスの変更","amber"], review_drift:["レビュー指摘","amber"], compatibility_drift:["互換性","amber"], artifact_mismatch:["生成物の改変","red"], incident_drift:["インシデント起因","red"], expiry:["期限切れ","gray"] },
+  publicationState: { not_published:["未反映","gray"], pr_open:["Draft PR あり","blue"], partially_published:["一部反映","amber"], published:["反映確認済み","green"] },
+  "revision_prs.status": { draft_open:["Draft PR 未マージ","blue"], merged:["マージ済","green"], closed:["クローズ","gray"] }, verification: { pending:["検証中","amber"], verified:["検証済","green"], mismatch:["生成物が改変されています","red"] },
+  "analysis_jobs.status": { queued:["待機中","gray"], running:["実行中","spinner"], done:["完了","green"], failed:["失敗(再試行)","red"], dead:["失敗(打切り)","red"] }, "analysis_jobs.type": { bootstrap:["初回ブートストラップ","blue"], drift_scan:["Drift 検出","amber"], proposal:["改定提案の生成","blue"], compile:["コンパイル","blue"], publish_verify:["公開検証","blue"], purge:["削除","red"] },
+  provenance: { human:["人間","gray"], ai:["AI","blue"], system:["システム(決定的処理)","gray"], import:["インポート","gray"], fork:["フォーク","gray"], transfer:["移管","gray"], approval:["承認","green"] }, layer: { L1:["哲学・方針","gray-outline"], L2:["意思決定基準","gray-outline"], L3:["ガイドライン","gray-outline"] }, enforcement: { locked:["必須(組織)","gray-outline"], default:["標準","gray"], advisory:["推奨","gray"], personal:["個人設定","gray"] }, role: { owner:["オーナー","blue"], admin:["管理者","blue"], maintainer:["メンテナー","blue"], member:["メンバー","gray"], viewer:["閲覧者","gray"] }, changeType: { initial:["新規","blue"], clarify:["明確化","blue"], tighten:["強化","amber"], relax:["緩和","gray"], refactor:["整理","gray"], deprecate:["廃止","red"] }, relationType: { override:["置換","amber"], extend:["追加(強化)","blue"], deny:["不適用","red"] }, "rule_relations.validationStatus": { unchecked:["未検証","gray"], passed:["検証済","green"], failed:["検証失敗","red"] }
+};
+export function getStatusLabel(kind: string, value: string): { label: string; tone: BadgeTone } { const item = LABELS[kind]?.[value]; return item ? { label:item[0], tone:item[1] } : { label:value, tone:"gray" }; }

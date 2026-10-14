@@ -1,0 +1,12 @@
+{
+  "scenarios": [
+    {"name": "override", "relationType": "override", "expectedRuleIds": ["child"]},
+    {"name": "extend", "relationType": "extend", "expectedRuleIds": ["child", "parent"]},
+    {"name": "deny", "relationType": "deny", "expectedRuleIds": ["child"]},
+    {"name": "conflict", "expectedConflicts": 1},
+    {"name": "repository-filter", "repositoryIds": ["other"], "expectedRuleIds": []},
+    {"name": "personal", "expectedPresentationRuleIds": ["personal"]},
+    {"name": "limit", "ruleCount": 501, "expectedError": "RULE_LIMIT_EXCEEDED"}
+  ],
+  "note": "Shared golden input contract; STRETCH-06 may consume this from TypeScript."
+}

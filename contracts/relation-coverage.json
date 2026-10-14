@@ -1,0 +1,109 @@
+[
+  {
+    "name": "no constraints",
+    "parent": {},
+    "child": {},
+    "uncovered": []
+  },
+  {
+    "name": "repo only",
+    "parent": {},
+    "child": {
+      "repositoryIds": [
+        "repo"
+      ]
+    },
+    "uncovered": []
+  },
+  {
+    "name": "narrow path",
+    "parent": {},
+    "child": {
+      "directoryGlobs": [
+        "src/**"
+      ]
+    },
+    "uncovered": [
+      "directoryGlobs"
+    ]
+  },
+  {
+    "name": "matching glob",
+    "parent": {
+      "directoryGlobs": [
+        "src/**"
+      ]
+    },
+    "child": {
+      "directoryGlobs": [
+        "src/**",
+        "lib/**"
+      ]
+    },
+    "uncovered": []
+  },
+  {
+    "name": "framework subset",
+    "parent": {
+      "frameworks": [
+        "React",
+        "Vue"
+      ]
+    },
+    "child": {
+      "frameworks": [
+        "React"
+      ]
+    },
+    "uncovered": [
+      "frameworks"
+    ]
+  },
+  {
+    "name": "language case insensitive",
+    "parent": {
+      "languages": [
+        "Python"
+      ]
+    },
+    "child": {
+      "languages": [
+        "PYTHON",
+        "Go"
+      ]
+    },
+    "uncovered": []
+  },
+  {
+    "name": "dependency case sensitive",
+    "parent": {
+      "dependencies": [
+        "Zod"
+      ]
+    },
+    "child": {
+      "dependencies": [
+        "zod"
+      ]
+    },
+    "uncovered": [
+      "dependencies"
+    ]
+  },
+  {
+    "name": "child all dimensions",
+    "parent": {},
+    "child": {
+      "languages": [
+        "TypeScript"
+      ],
+      "directoryGlobs": [
+        "src/**"
+      ]
+    },
+    "uncovered": [
+      "languages",
+      "directoryGlobs"
+    ]
+  }
+]

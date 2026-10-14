@@ -1,0 +1,92 @@
+.tagInputEntry{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px;
+}
+.tagInputEntry .formControl{
+  flex:1 1 160px;
+  min-width:0;
+  width:auto;
+}
+.tagInputEntry .tagInputAddButton{
+  flex:0 0 auto;
+  min-height:40px;
+}
+.tagInputEntry .tagInputAddButton:disabled{
+  cursor:not-allowed;
+  opacity:.55;
+}
+.tagInput .tagInputChips{
+  min-width:0;
+}
+.tagInput>label{
+  color:var(--color-text-secondary);
+  font-size:13px;
+  font-weight:700;
+}
+.tagInput .tagInputChip{
+  max-width:100%;
+  overflow-wrap:anywhere;
+}
+.tagInputInlineField{
+  display:grid;
+  gap:8px;
+  min-width:0;
+}
+.tagInputInlineField>label{
+  color:var(--color-text-secondary);
+  font-size:13px;
+  font-weight:700;
+}
+.tagInputInlineEditor{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:7px;
+  min-height:43px;
+  padding:8px;
+  border:1px solid var(--color-border);
+  border-radius:9px;
+}
+.tagInputInlineEditor:focus-within{
+  border-color:var(--color-primary);
+  box-shadow:0 0 0 3px var(--color-primary-subtle);
+}
+.tagInputInlineEditor input{
+  flex:1 1 120px;
+  min-width:100px;
+  height:27px;
+  border:0;
+  outline:0;
+  color:var(--color-text);
+  font-size:13px;
+}
+.tagInputInlineChip{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  max-width:100%;
+  padding:3px 6px 3px 9px;
+  border-radius:7px;
+  background:var(--color-surface-muted);
+  color:var(--color-text-secondary);
+  font-size:12px;
+  overflow-wrap:anywhere;
+}
+.tagInputInlineChip button{
+  display:grid;
+  place-items:center;
+  flex:0 0 22px;
+  width:22px;
+  height:22px;
+  border:0;
+  border-radius:5px;
+  background:transparent;
+  color:var(--color-text-muted);
+  cursor:pointer;
+}
+.tagInputInlineChip button:hover{
+  background:var(--color-border);
+  color:var(--color-text);
+}

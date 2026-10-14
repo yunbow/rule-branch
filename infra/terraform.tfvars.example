@@ -1,0 +1,31 @@
+project_id              = "replace-with-your-gcp-project-id"
+github_app_id           = "replace-with-your-github-app-id"
+github_app_slug         = "replace-with-your-github-app-slug"
+github_oauth_client_id  = "replace-with-your-github-oauth-client-id"
+
+# Build and push these first (docker build + docker push to Artifact Registry / GCR),
+# then paste the resulting image tags here. There is no default: an unset value fails
+# `terraform plan` rather than silently deploying Google's gcr.io/cloudrun/hello sample.
+web_image    = "replace-with-your-pushed-web-image-tag"
+worker_image = "replace-with-your-pushed-worker-image-tag"
+
+# Cloud Run assigns the canonical service URLs. After the initial service
+# creation, retrieve them with `gcloud run services describe ... --format='value(status.url)'`
+# and set them here before the follow-up Terraform apply that configures OIDC.
+web_url    = "replace-with-your-web-cloud-run-url"
+worker_url = "replace-with-your-worker-cloud-run-url"
+
+# Keep one warm Web instance for lower latency. Set to 0 for scale-to-zero.
+web_min_instance_count = 1
+
+# Do not put secret values here. Add Secret Manager versions for
+# rulebranch-github-app-private-key, rulebranch-webhook-secret,
+# rulebranch-ai-api-key, rulebranch-github-oauth-client-secret, and
+# rulebranch-session-secret, and (when approval is enabled)
+# rulebranch-approval-session-secret manually or from CI/CD.
+
+
+# Hackathon judge demo login (optional).
+# The shared password is stored in Secret Manager, never in tfvars.
+# demo_login_enabled = true
+# demo_login_id      = "zenn-judge"

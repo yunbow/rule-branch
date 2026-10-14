@@ -1,0 +1,19 @@
+[project]
+name = "rulebranch-worker"
+version = "0.1.0"
+requires-python = ">=3.12"
+# Keep production dependencies exact so rebuilding the same revision does not
+# silently adopt a new direct dependency.  CI audits the fully resolved graph;
+# update these pins deliberately (and together where Google SDK constraints
+# overlap) after tests and the container smoke test pass.
+dependencies = [
+    "google-adk==2.11.0",
+    "google-auth==2.59.1",
+    "google-cloud-firestore==2.34.0",
+    "google-genai==2.28.0",
+    "jsonschema==4.26.0",
+    "cryptography==50.0.2",
+]
+
+[tool.ruff]
+line-length = 120

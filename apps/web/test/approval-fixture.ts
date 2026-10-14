@@ -1,0 +1,12 @@
+import { loadApprovalConfig, textDigest, type ApprovalContext, type ApprovalSignals } from "../src/shared/approval-policy.ts";
+export const config = () => loadApprovalConfig({ RULEBRANCH_APPROVAL_MODE: "auto", RULEBRANCH_APPROVAL_WORKSPACE_IDS: "workspace", GOOGLE_CLOUD_PROJECT: "rulebranch-demo", RULEBRANCH_APPROVAL_MODEL: "gemini-test-model", RULEBRANCH_MODEL_ARMOR_TEMPLATE: "projects/rulebranch-demo/locations/us-central1/templates/rules" });
+export const signals = (): ApprovalSignals => ({ recommendation: "APPROVE", risk: "LOW", evidenceSupported: true, preservesIntent: true, conflictsWithRules: false, weakensProtection: false, judgeScore: 0.98, groundednessScore: 1, groundednessConfidence: 0.98, armorPassed: true });
+export function context(): ApprovalContext {
+  const oldTime = new Date(Date.now() - 600000).toISOString();
+  const rule = { id: "rule", ownerWorkspaceId: "workspace", scopeType: "project", scopeId: "project", projectId: "project", layer: "L3", type: "coding-style", enforcement: "advisory", evaluationMode: "semantic", status: "stale", currentVersionId: "old", title: "命名規則", key: "naming", updatedAt: oldTime };
+  const currentVersion = { id: "old", ownerWorkspaceId: "workspace", ruleId: "rule", status: "approved", version: 1, content: "Use the existing component naming convention." };
+  return { workspace: { id: "workspace", status: "active", settings: { aiDataUsageConsent: true } }, project: { id: "project", ownerWorkspaceId: "workspace", status: "active" }, rule, currentVersion,
+    proposal: { id: "proposal", ownerWorkspaceId: "workspace", ruleId: "rule", version: 2, status: "proposed", changeType: "clarify", content: "Use PascalCase for components.", rationale: "Keep the existing convention explicit.", evidenceIds: ["evidence"], driftFindingIds: ["finding"], createdAt: oldTime, provenance: { sourceType: "human" } },
+    relatedRules: [{ rule, version: currentVersion }], evidence: [{ id: "evidence", ownerWorkspaceId: "workspace", repositoryId: "repo", excerpt: "export const Example = () => null;", excerptHash: textDigest("export const Example = () => null;"), excerptState: "present", ref: { commitSha: "a".repeat(40), path: "Example.tsx", lineStart: 1, lineEnd: 1 } }],
+    findings: [{ id: "finding", ownerWorkspaceId: "workspace", ruleId: "rule", ruleVersionId: "old", status: "accepted" }], repositories: [{ id: "repo", ownerWorkspaceId: "workspace", projectId: "project", status: "active" }], warnings: [], issues: [] };
+}

@@ -1,0 +1,54 @@
+/* Version detail styles are route-scoped to avoid changing shared review cards. */
+.versionHeaderMetaGroup{display:inline-flex;align-items:center;gap:8px;min-width:0}
+.versionHeaderMetaGroup>span:first-child{color:var(--color-text-muted);font-size:12px;font-weight:650}
+.versionDetail{min-width:0}
+.versionDetail .pageSectionCard{min-width:0}
+.versionDetail .actionBar{margin:0}
+.versionDetailActions{justify-content:flex-start}
+.versionChangeStack{display:grid;gap:16px;min-width:0}
+.versionChangeSummary{min-width:0;padding:14px 16px;border:1px solid var(--color-primary-border);border-radius:10px;background:var(--color-primary-subtle)}
+.versionDetailLabel{display:block;margin-bottom:6px;color:var(--color-text);font-size:12px;font-weight:800}
+.versionChangeSummary p{margin:0;color:var(--color-text-secondary);font-size:14px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere}
+.versionChangeSubnote{margin:0;color:var(--color-text-muted);font-size:13px;line-height:1.6}
+.versionDetail .detailMetaGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0}
+.versionDetail .detailMetaItem{min-width:0;overflow-wrap:anywhere}
+.versionDetail .detailMetaItem strong{line-height:1.6}
+.versionMetaValue{display:flex;align-items:flex-start;flex-direction:column;gap:5px;margin-top:8px;min-width:0}
+.versionMetaLink{color:var(--color-primary);font-size:13px;font-weight:750;text-decoration:none}
+.versionMetaLink:hover{text-decoration:underline}
+.versionReferenceId{display:block;max-width:100%;color:var(--color-text-muted);font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.versionChangeReason{min-width:0;padding:16px 18px;border:1px solid var(--color-border);border-radius:10px;background:var(--color-surface-subtle)}
+.versionChangeReason h3{margin:0 0 8px;color:var(--color-text);font-size:13px}
+.versionChangeReason p{margin:0;color:var(--color-text-secondary);font-size:14px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere}
+.versionCompatibility{display:grid;gap:10px;justify-items:start}
+.versionCompatibility .contentPanel{width:100%;min-width:0}
+.versionContentTabs{width:max-content;margin-bottom:16px}
+.versionContentPanel{min-width:0}
+.versionContentPanel[hidden]{display:none}
+.versionCompareNote{margin:0 0 13px;color:var(--color-text-muted);font-size:12px;line-height:1.6}
+.versionDetail .pageSectionCard .reviewEvaluationSummary,
+.versionDetail .pageSectionCard .reviewEvaluationSummary:first-child{margin:0;border:1px solid var(--color-border);border-radius:10px}
+.versionDetail .reviewEvaluationPending{font-size:13px;line-height:1.65}
+.versionDetail .reviewEvaluationPending strong{display:block;color:var(--color-text);font-size:13px}
+.versionDetail .reviewEvaluationPending p{margin:0}
+.versionReviewStatus{display:flex;align-items:center;flex-wrap:wrap;gap:10px;color:var(--color-text-secondary);font-size:13px;line-height:1.65}
+.versionDetail .versionReviewGrid{margin-top:16px}
+.versionRejectionReason{margin-top:16px}
+.versionDetail .evidenceCard{min-width:0}
+.versionDetail .evidenceCard header span{overflow-wrap:anywhere}
+.versionDetail .evidenceActions{margin-top:8px}
+@media (max-width:1050px){
+  .versionDetail .detailMetaGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:700px){
+  .versionDetail .detailMetaGrid{grid-template-columns:1fr}
+  .versionDetail .pageSectionCard{padding:16px}
+  .versionChangeReason,.versionChangeSummary{padding:13px 14px}
+  .versionDetailActions{align-items:stretch}
+}
+
+.versionDetail .detailMetaItem .versionMetaText{display:inline-flex;align-items:center;padding:3px 9px;margin:0;border-radius:999px;background:var(--color-surface-muted);color:var(--color-text-secondary);font-size:12px;font-weight:700;line-height:1.6}
+.versionDetail .versionMetaText[data-tone="blue"]{background:var(--color-primary-subtle);color:var(--color-primary-hover)}
+.versionDetail .versionMetaText[data-tone="amber"]{background:#fff7ed;color:#9a3412}
+.versionDetail .versionMetaText[data-tone="red"]{background:#fef2f2;color:#991b1b}
+.versionDetail .versionMetaText[data-tone="green"]{background:#f0fdf4;color:#166534}

@@ -1,0 +1,3 @@
+"use client";
+import { useState } from "react"; import { Button } from "../ui/index.tsx"; import { RuleMetaEditDialog } from "./RuleMetaEditDialog.tsx";
+export function RuleDetailActions({workspaceId,rule,repositories,writable}:{workspaceId:string;rule:Record<string,unknown>;repositories:{id:string;fullName:string;status?:string}[];writable:boolean}){const [open,setOpen]=useState(false);return <><Button type="button" variant="ghost" disabled={!writable} onClick={()=>setOpen(true)}>編集</Button><RuleMetaEditDialog open={open} onClose={()=>setOpen(false)} workspaceId={workspaceId} rule={rule} repositories={repositories} writable={writable}/></>}

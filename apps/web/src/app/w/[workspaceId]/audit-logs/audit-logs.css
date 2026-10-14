@@ -1,0 +1,10 @@
+.auditLogEntry { min-width: 0; overflow-wrap: anywhere; }
+.auditLogHeading { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+.auditLogHeading time { color: var(--muted); font-size: .85rem; }
+.auditLogFacts { display: grid; gap: .5rem; margin: 1rem 0; }
+.auditLogFacts div { display: flex; flex-wrap: wrap; gap: .5rem; }
+.auditLogFacts dt { font-weight: 600; }
+.auditLogFacts dd { margin: 0; min-width: 0; }
+.auditLogPayload { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin-top: 1rem; }
+.auditLogPayload pre { max-height: 24rem; overflow: auto; font-size: .8rem; }
+@media (max-width: 640px) { .auditLogPayload { grid-template-columns: minmax(0,1fr); } }

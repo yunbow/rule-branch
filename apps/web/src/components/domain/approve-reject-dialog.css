@@ -1,0 +1,96 @@
+/* Rule version review modal. Keep styles scoped so other dialogs are unaffected. */
+.dialogBody.approvalDecisionDialog {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 24px;
+  color: var(--color-text);
+}
+.approvalDecisionHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+.approvalDecisionIcon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+.approvalDecisionDialog.isRejection .approvalDecisionIcon {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+.approvalDecisionHeaderCopy {
+  min-width: 0;
+  padding-top: 1px;
+}
+.approvalDecisionEyebrow {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .04em;
+}
+.dialogBody.approvalDecisionDialog h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 20px;
+  line-height: 1.35;
+  letter-spacing: -.02em;
+}
+.approvalDecisionDialog .approvalDecisionDescription {
+  margin: 16px 0;
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.approvalDecisionDialog .approvalDecisionNotice {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.approvalDecisionField {
+  min-width: 0;
+}
+.approvalDecisionDialog .formField {
+  min-width: 0;
+  gap: 8px;
+  font-size: 13px;
+}
+.approvalDecisionDialog textarea.formControl {
+  display: block;
+  min-height: 112px;
+  resize: vertical;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.approvalDecisionDialog .formActions.approvalDecisionActions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+}
+@media (max-width: 600px) {
+  .dialogBody.approvalDecisionDialog {
+    padding: 20px 16px;
+  }
+  .approvalDecisionDialog .formActions.approvalDecisionActions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+  .approvalDecisionDialog .formActions.approvalDecisionActions button {
+    width: 100%;
+  }
+}
